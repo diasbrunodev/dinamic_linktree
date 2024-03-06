@@ -31,11 +31,11 @@
 
 :heavy_check_mark: `Funcionalidade 1:` Autenticação do login pelo Firebase e uso do seu banco de dados.
 
-:heavy_check_mark: `Funcionalidade 2:`Login e logout do usuário e proteção de rota.
+:heavy_check_mark: `Funcionalidade 2:` Login e logout do usuário e proteção de rota.
 
-:heavy_check_mark: `Funcionalidade 3:`Formulário para inserir links e criar botões estilizados, cadastrando no banco de dados.
+:heavy_check_mark: `Funcionalidade 3:` Formulário para inserir links e criar botões estilizados, cadastrando no banco de dados.
 
-:heavy_check_mark: `Funcionalidade 4:`Regras de acesso a alterações no banco de dados.
+:heavy_check_mark: `Funcionalidade 4:` Regras de acesso a alterações no banco de dados.
 
 ## Layout
 
