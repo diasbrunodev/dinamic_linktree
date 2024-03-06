@@ -43,6 +43,8 @@
 
 ![layout página de cadastro de links](./src/images/page2.png)
 
+### Layout Responsivo
+
 <img style='width:200px;  margin-right: 20px' src='./src/images/cel.png' alt='layout responsivo para celular'><img style='width:200px' src='./src/images/cel2.png' alt='layout responsivo para celular'>
 
   </div>
