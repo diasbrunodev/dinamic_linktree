@@ -1,51 +1,48 @@
-import { ReactNode, useEffect, useState } from "react"
-import { Navigate } from "react-router-dom"
+import { ReactNode, useEffect, useState } from "react";
+import { Navigate } from "react-router-dom";
 
-import { auth } from '../services/firebaseConnection'
-import { onAuthStateChanged } from 'firebase/auth'
+import { auth } from "../services/firebaseConnection";
+import { onAuthStateChanged } from "firebase/auth";
 
 interface PrivaceProps {
-    children: ReactNode
+  children: ReactNode;
 }
 
 export function Private({ children }: PrivaceProps) {
+  const [loading, setLoading] = useState(true);
+  const [signed, setSigned] = useState(false);
 
-    const [loading, setLoading] = useState(true)
-    const [signed, setSigned] = useState(false)
+  useEffect(() => {
+    const unsub = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        console.log(user);
+        const userData = {
+          uid: user?.uid,
+          email: user?.email,
+        };
 
-    useEffect(() => {
+        localStorage.setItem("@reactlinks", JSON.stringify(userData));
+        setLoading(false);
+        setSigned(true);
+      } else {
+        //console.log("NÃO TEM USER LOGADO")
+        setLoading(false);
+        setSigned(false);
+      }
+    });
+    //console.log("UNSUB", unsub)
+    return () => {
+      unsub();
+    };
+  }, []);
 
-        const unsub = onAuthStateChanged(auth, (user) => {
-            if (user) {
-                //console.log(user)
-                const userData = {
-                    uid: user?.uid,
-                    email: user?.email
-                }
+  if (loading) {
+    return <div></div>;
+  }
 
-                localStorage.setItem("@reactlinks", JSON.stringify(userData))
-                setLoading(false)
-                setSigned(true)
+  if (!signed) {
+    return <Navigate to="/login" />;
+  }
 
-            } else {
-                //console.log("NÃO TEM USER LOGADO")
-                setLoading(false)
-                setSigned(false)
-            }
-        })
-        //console.log("UNSUB", unsub)
-        return () => {
-            unsub()
-        }
-    }, [])
-
-    if (loading) {
-        return <div></div>
-    }
-
-    if (!signed) {
-        return <Navigate to='/login' />
-    }
-
-    return children
+  return children;
 }
