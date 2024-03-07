@@ -63,6 +63,10 @@
 - Git
 - TailwindCSS
 
+🎈 <i><b>OBS:</b></i> Foi utilizado o Firebase porque traz a estrutura de login e armazenamento de dados no banco sem a necessidade de implementar algo mais complexo.
+       O uso do Tailwind se justifica por ser um projeto de estudos, facilitando sua estilização e tornando mais ágil o processo, visto que não é uma aplicação grande e complexa.
+
+
 ###
 
 ## Acesso ao projeto
