@@ -80,7 +80,7 @@ Você pode [acessar o site do projeto](https://dinamic-linktree.vercel.app/).
 git clone <link do repositório>
 
 # Acesse a pasta do projeto no seu terminal
-cd dinamic_linktree
+cd <nome do projeto>
 
 # Execute a aplicação
 npm run dev
